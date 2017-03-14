@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="questionnaireApp" class="no-js">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="robots" content="noindex,nofollow" />
+
+    <title>Customer Heartbeat</title>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular-route.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular-resource.js"></script>
+
+
+    <script src="/static/lib/components/underscore/underscore.js"></script>
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="/static/lib/assets/css/bootstrap.css"  type="text/css"/>
+    <link rel="stylesheet" href="/static/lib/assets/css/bootstrap-theme.min.css" type="text/css" />
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="/static/lib/components/html5shiv/dist/html5shiv.min.js"></script>
+    <script src="/static/lib/components/respond/dest/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Feedback slideout -->
+    <script src="/static/lib/components/slideout/slideout.js"></script>
+
+    <!-- Active8 -->
+    <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Roboto:300,400,700"  type="text/css">
+    <link rel="stylesheet" href="/static/lib/components/font-awesome/css/font-awesome.css" />
+
+    <link rel="stylesheet" href="/static/css/chb.css">
+
+</head>
+<body>
+
+<div class="container-fluid">
+    <div ng-view class="card"></div>
+
+    <!-- Sliding div starts here -->
+    <div id="slider" style="right:-342px; z-index: 9999;">
+        <div id="sidebar" onclick="open_panel()">Feedback</div>
+        <div id="slideout-header">
+            <div onclick="close_panel()"><i class="fa fa-close" style="cursor: pointer;"></i></div>
+            <h2>Question?</h2>
+            <p>Send us a message.</p>
+            <div class="question"><input name="name" type="text" class="form-control" value="Your name"></div>
+            <div class="question"><input name="email" type="text" class="form-control" value="Your e-mail address"></div>
+            <div class="question"><textarea rows="4" class="form-control">Message</textarea></div>
+            <ul class="pager">
+                <li class="send"><a href="#">Send <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></a></li>
+            </ul>
+        </div>
+    </div>
+    <!-- Sliding div ends here -->
+</div>
+
+  <!-- In production use:
+  <script src="//ajax.googleapis.com/ajax/libs/angularjs/x.x.x/angular.min.js"></script>
+  -->
+    <script src="/static/js/app.js"></script>
+    <script src="/static/js/services.js"></script>
+    <script src="/static/js/controllers.js"></script>
+    <script src="/static/js/directives.js"></script>
+
+
+</body>
+</html>

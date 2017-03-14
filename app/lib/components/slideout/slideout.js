@@ -1,0 +1,43 @@
+function open_panel()
+{
+    slideIt();
+    var a = document.getElementById("sidebar");
+    // a.setAttribute("id","sidebar1");
+    a.setAttribute("style","position: absolute;right: 198px;margin-top:250px;");
+    a.setAttribute("onclick","close_panel()");
+}
+
+function slideIt()
+{
+    var slidingDiv = document.getElementById("slider");
+    var a = document.getElementById("sidebar");
+    var stopPosition = 0;
+
+    if (parseInt(slidingDiv.style.right) < stopPosition )
+    {
+        slidingDiv.style.right = parseInt(slidingDiv.style.right) + 5 + "px";
+        setTimeout(slideIt, 1);
+    }
+}
+
+function close_panel(){
+    slideIn();
+    var a = document.getElementById("sidebar");
+    a.setAttribute("onclick","open_panel()");
+}
+
+function slideIn()
+{
+    var slidingDiv = document.getElementById("slider");
+    var a = document.getElementById("sidebar");
+    var stopPosition = -255;
+
+    if (parseInt(slidingDiv.style.right) > stopPosition )
+    {
+        slidingDiv.style.right = parseInt(slidingDiv.style.right) - 5 + "px";
+        setTimeout(slideIn, 1);
+    }
+    else if (parseInt(slidingDiv.style.right) == stopPosition) {
+        a.setAttribute("style","");
+    }
+}
